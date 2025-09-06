@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Connor's Biography</title>
+</head>
+
+<body>
+    <h1>
+       Connor's Biography
+    </h1>
+    
+    <p>
+        Connor Hicks is currently a junior at Syracuse University where he studies <strong>Applied Data Analytics</strong>.  He plans to minor in <strong>Applications of AI</strong> as he feels AI is a rapidly growing field that he wants to be apart of
+    </p>
+
+    <p>
+        Connor is from North Attleboro, Massachusetts which is near the border of Rhode Island.  He previously attended Milton Academy where he played hockey and lacrosse. 
+    </p>
+
+    <h2> Personal Information 
+
+        <p>
+            When he isn't building websites with HTML, Connor enjoys playing guitar and enjoying time with friends and family.  
+        </p>
+
+    </h2>
+
+    <h3>Interests</h3>
+    <ul>
+        <li>Cooking</li>
+        <li>Playing Guitar</li>
+        <li>Hiking</li>
+        <li>Coding Projects</li>
+        <li>Fishing</li>
+    </ul>
+
+    <hr>
+
+    <p>
+    &#64; 2025
+    </p>
+
+</body>
+
+</html>
