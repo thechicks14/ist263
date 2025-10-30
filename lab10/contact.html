@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a> <span class="pipe">|</span>
+    <a href="skills.html">Skills</a> <span class="pipe">|</span>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h1>Contact</h1>
+
+    <div class="contact-container">
+
+      <div class="row row1">
+        <div class="column address">
+          <h2>Address</h2>
+          <p>North Attleboro<br>Massachusetts, MA</p>
+        </div>
+
+        <div class="column contact-links">
+          <h2>Contact Links</h2>
+          <ul>
+            <li>Email: <a href="mailto:cfhicks@syr.edu">cfhicks@syr.edu</a></li>
+            <li>LinkedIn:
+              <a href="https://www.linkedin.com/in/connor-hicks-syracuse/" target="_blank">
+                linkedin.com/in/connor-hicks-syracuse
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row row2 form-map-row">
+        <!-- Form -->
+        <div class="form-box">
+          <h2>Send Me a Message</h2>
+          <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <iframe
+          class="contact-map"
+          src="https://www.google.com/maps?q=Syracuse+University&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
