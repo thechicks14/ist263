@@ -1,9 +1,82 @@
-/* ===== CONTACT PAGE FLEXBOX LAYOUT ===== */
+body {
+  background-color: #F7F3EF;
+  color: #2E2E2E;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+nav {
+  background-color: #457B9D;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: #F1FAEE;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background-color: #E9C46A;
+  color: #1D3557;
+}
+
+nav span {
+  color: #F1FAEE;
+  margin: 0 0.25rem;
+}
+
+/* Headings and Layout */
+h1, h2, h3 {
+  color: #1D3557;
+  margin-top: 1.5rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  background-color: #FFFFFF;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #E9C46A;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+strong {
+  color: #1D3557;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #CCCCCC;
+  margin-top: 2rem;
+  color: #457B9D;
+  font-size: 0.9rem;
+}
 
 .contact-container {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* space between top and bottom rows */
+  gap: 30px;
   margin: 30px;
 }
 
@@ -11,6 +84,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .column {
@@ -20,7 +94,6 @@
   padding: 20px;
 }
 
-/* specific colors to help visualize rows */
 .row1 .column {
   background-color: #eaf4fc;
 }
@@ -29,7 +102,6 @@
   background-color: #fef6e4;
 }
 
-/* spacing for content */
 h2 {
   margin-top: 0;
 }
@@ -55,23 +127,36 @@ button:hover {
   background-color: #003f87;
 }
 
-/* make sure map fills space and aligns nicely */
 .map-box iframe {
   border-radius: 8px;
   width: 100%;
   height: 300px;
 }
 
-/* Add space around the entire layout */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
-nav {
-  margin-bottom: 20px;
-}
+@media (max-width: 768px) {
+  nav {
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
 
-h1 {
-  margin-left: 30px;
+  nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav span {
+    display: none;
+  }
+
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
