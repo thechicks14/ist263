@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+</head>
+
+<body>
+
+  <h1>Contact</h1>
+
+  <p>
+    Syracuse University<br>
+    Huntington Hall 030<br>
+    Syracuse, NY 13244
+  </p>
+
+  <p>
+    <a href="mailto:cfhicks@syr.edu">cfhicks@syr.edu</a>
+  </p>
+
+  <p>
+    <a href="https://www.linkedin.com/in/connor-hicks-syracuse/" target="_blank">
+      <img src="../images/LI-Logo.png" alt="LinkedIn Logo" width="50">
+      My LinkedIn Profile
+    </a>
+  </p>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96116.21387638658!2d-76.22176679653232!3d43.03522992142835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f39bbf979a0d%3A0xd50ce2d7ad9545!2sSyracuse%2C%20NY!5e1!3m2!1sen!2sus!4v1757534346145!5m2!1sen!2sus"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+</body>
+</html>
