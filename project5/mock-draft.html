@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Draft Simulator | CFB Scout</title>
+</head>
+<body>
+    <header>
+        <h1>CFB Scout</h1>
+        <p>Your comprehensive college football scouting database and mock draft simulator</p>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Player List</a></li>
+                <li><a href="player-bio.html">Player Bios</a></li>
+                <li><a href="mock-draft.html">Mock Draft Simulator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>2026 NFL Mock Draft Simulator</h2>
+            <p>Create your own mock draft for the 2026 NFL Draft. Select players for each team based on their needs and your scouting evaluations. This interactive tool allows you to simulate the first round of the draft and see how your board compares to expert consensus.</p>
+        </section>
+
+        <section>
+            <h3>How to Use the Simulator</h3>
+            <ol>
+                <li>Review the draft order based on current team standings</li>
+                <li>For each pick, select a player from the available prospects</li>
+                <li>Consider team needs and best available player strategy</li>
+                <li>Submit your complete mock draft to save and share</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>First Round Draft Order</h3>
+            
+            <form action="submit-mock-draft.html" method="post">
+                <fieldset>
+                    <legend>Pick 1 - New York Giants</legend>
+                    <label for="pick1">Select Player:</label>
+                    <select id="pick1" name="pick1" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> QB, OT, EDGE</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pick 2 - Las Vegas Raiders</legend>
+                    <label for="pick2">Select Player:</label>
+                    <select id="pick2" name="pick2" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> QB, WR, CB</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pick 3 - New England Patriots</legend>
+                    <label for="pick3">Select Player:</label>
+                    <select id="pick3" name="pick3" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> WR, OT, EDGE</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pick 4 - Jacksonville Jaguars</legend>
+                    <label for="pick4">Select Player:</label>
+                    <select id="pick4" name="pick4" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> OT, CB, EDGE</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pick 5 - Tennessee Titans</legend>
+                    <label for="pick5">Select Player:</label>
+                    <select id="pick5" name="pick5" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> WR, OT, DT</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pick 6 - Cleveland Browns</legend>
+                    <label for="pick6">Select Player:</label>
+                    <select id="pick6" name="pick6" required>
+                        <option value="">Choose a player...</option>
+                        <option value="travis-hunter">Travis Hunter - CB/WR, Colorado</option>
+                        <option value="shedeur-sanders">Shedeur Sanders - QB, Colorado</option>
+                        <option value="abdul-carter">Abdul Carter - EDGE, Penn State</option>
+                        <option value="will-johnson">Will Johnson - CB, Michigan</option>
+                        <option value="tetairoa-mcmillan">Tetairoa McMillan - WR, Arizona</option>
+                        <option value="mason-graham">Mason Graham - DT, Michigan</option>
+                    </select>
+                    <p><strong>Team Needs:</strong> OT, WR, DT</p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Information</legend>
+                    <label for="userName">Your Name:</label>
+                    <input type="text" id="userName" name="userName" required>
+                    
+                    <label for="userEmail">Email (optional):</label>
+                    <input type="email" id="userEmail" name="userEmail">
+                    
+                    <label for="draftStrategy">Draft Strategy:</label>
+                    <textarea id="draftStrategy" name="draftStrategy" rows="4" cols="50" placeholder="Explain your draft strategy and reasoning..."></textarea>
+                </fieldset>
+
+                <button type="submit">Submit Mock Draft</button>
+                <button type="reset">Reset Draft</button>
+            </form>
+        </section>
+
+        <aside>
+            <h3>Draft Resources</h3>
+            <ul>
+                <li><a href="index.html">View All Prospects</a></li>
+                <li><a href="player-bio.html">Read Scouting Reports</a></li>
+            </ul>
+            
+            <h3>Popular Mock Drafts</h3>
+            <ol>
+                <li>Expert Consensus Mock Draft 1.0</li>
+                <li>Team Needs-Based Mock Draft</li>
+                <li>Best Player Available Mock Draft</li>
+            </ol>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CFB Scout. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@cfbscout.com">info@cfbscout.com</a></p>
+        <p>Follow us on social media for the latest scouting updates and draft analysis</p>
+    </footer>
+</body>
+</html>
