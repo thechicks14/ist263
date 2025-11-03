@@ -4,6 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mock Draft Simulator | CFB Scout</title>
+    <style>
+        /* Minimal structural CSS to maintain usability without colors or complex aesthetics */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li a {
+            text-decoration: none;
+            padding: 10px 5px;
+            display: block;
+        }
+        
+        main {
+            padding: 20px;
+        }
+
+        #draft-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .draft-box {
+            border: 1px solid black;
+            padding: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .draft-box h3 {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        /* List Styling */
+        .draft-list, .player-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .draft-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid black;
+        }
+
+        /* Styling for the draggable player card */
+        .player-card {
+            border: 1px solid black;
+            padding: 5px 10px;
+            cursor: grab;
+            font-weight: normal;
+        }
+        
+        /* Styling for the drop zone next to the team */
+        .drop-zone {
+            flex-grow: 1;
+            text-align: right;
+            padding: 5px;
+            border: 1px dashed black;
+            min-height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            #draft-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,136 +114,88 @@
     <main>
         <section>
             <h2>2026 NFL Mock Draft Simulator</h2>
-            <p>Create your own mock draft for the 2026 NFL Draft. Select a team from the left box and a player from the right box to make your picks.</p>
+            <p>Drag a player from the Available Players list into the **Drop Zone** next to the NFL team to make your pick.</p>
         </section>
 
-        <div>
-            <section>
-                <h3>NFL Teams</h3>
-                <form action="submit-mock-draft.html" method="post">
-                    <fieldset>
-                        <legend>Select Teams (Draft Order)</legend>
-                        
-                        <input type="radio" id="giants" name="team" value="giants" required>
-                        <label for="giants">1. New York Giants</label>
-                        <p>Team Needs: QB, OT, EDGE</p>
+        <div id="draft-container">
+            
+            <section id="draft-results" class="draft-box">
+                
+                <h3>Round 1 Picks</h3>
+                <ul class="draft-list">
+                    <li id="pick-1">
+                        <span>1. New York Giants</span>
+                        <div class="drop-zone" id="dz-1" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
 
-                        <input type="radio" id="raiders" name="team" value="raiders">
-                        <label for="raiders">2. Las Vegas Raiders</label>
-                        <p>Team Needs: QB, WR, CB</p>
+                    <li id="pick-2">
+                        <span>2. Las Vegas Raiders</span>
+                        <div class="drop-zone" id="dz-2" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
 
-                        <input type="radio" id="patriots" name="team" value="patriots">
-                        <label for="patriots">3. New England Patriots</label>
-                        <p>Team Needs: WR, OT, EDGE</p>
+                    <li id="pick-3">
+                        <span>3. Tennessee Titans</span>
+                        <div class="drop-zone" id="dz-3" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
 
-                        <input type="radio" id="jaguars" name="team" value="jaguars">
-                        <label for="jaguars">4. Jacksonville Jaguars</label>
-                        <p>Team Needs: OT, CB, EDGE</p>
-
-                        <input type="radio" id="titans" name="team" value="titans">
-                        <label for="titans">5. Tennessee Titans</label>
-                        <p>Team Needs: WR, OT, DT</p>
-
-                        <input type="radio" id="browns" name="team" value="browns">
-                        <label for="browns">6. Cleveland Browns</label>
-                        <p>Team Needs: OT, WR, DT</p>
-
-                        <input type="radio" id="jets" name="team" value="jets">
-                        <label for="jets">7. New York Jets</label>
-                        <p>Team Needs: OT, WR, CB</p>
-
-                        <input type="radio" id="panthers" name="team" value="panthers">
-                        <label for="panthers">8. Carolina Panthers</label>
-                        <p>Team Needs: WR, EDGE, CB</p>
-
-                        <input type="radio" id="saints" name="team" value="saints">
-                        <label for="saints">9. New Orleans Saints</label>
-                        <p>Team Needs: QB, OT, CB</p>
-
-                        <input type="radio" id="bears" name="team" value="bears">
-                        <label for="bears">10. Chicago Bears</label>
-                        <p>Team Needs: OT, DT, CB</p>
-
-                        <input type="radio" id="49ers" name="team" value="49ers">
-                        <label for="49ers">11. San Francisco 49ers</label>
-                        <p>Team Needs: OT, CB, DT</p>
-
-                        <input type="radio" id="colts" name="team" value="colts">
-                        <label for="colts">12. Indianapolis Colts</label>
-                        <p>Team Needs: QB, EDGE, CB</p>
-                    </fieldset>
-                </form>
+                    <li id="pick-4">
+                        <span>4. Jacksonville Jaguars</span>
+                        <div class="drop-zone" id="dz-4" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
+                
+                </ul>
             </section>
 
-            <section>
+            <section id="available-players" class="draft-box">                
+                
                 <h3>Available Players</h3>
-                <form action="submit-mock-draft.html" method="post">
-                    <fieldset>
-                        <legend>Select Player</legend>
-                        
-                        <input type="radio" id="hunter" name="player" value="hunter" required>
-                        <label for="hunter">Travis Hunter - CB/WR, Colorado</label>
-                        <p>Draft Projection: Top 5 Pick</p>
-                        <p>Elite two-way player, Heisman Trophy winner</p>
-
-                        <input type="radio" id="sanders" name="player" value="sanders">
-                        <label for="sanders">Shedeur Sanders - QB, Colorado</label>
-                        <p>Draft Projection: 1st Round</p>
-                        <p>Accurate pocket passer with strong leadership</p>
-
-                        <input type="radio" id="carter" name="player" value="carter">
-                        <label for="carter">Abdul Carter - EDGE, Penn State</label>
-                        <p>Draft Projection: Top 10 Pick</p>
-                        <p>Elite pass rusher with explosive first step</p>
-
-                        <input type="radio" id="johnson" name="player" value="johnson">
-                        <label for="johnson">Will Johnson - CB, Michigan</label>
-                        <p>Draft Projection: 1st Round</p>
-                        <p>Physical corner with excellent ball skills</p>
-
-                        <input type="radio" id="mcmillan" name="player" value="mcmillan">
-                        <label for="mcmillan">Tetairoa McMillan - WR, Arizona</label>
-                        <p>Draft Projection: 1st Round</p>
-                        <p>Big-bodied receiver with outstanding catch radius</p>
-
-                        <input type="radio" id="graham" name="player" value="graham">
-                        <label for="graham">Mason Graham - DT, Michigan</label>
-                        <p>Draft Projection: Top 15 Pick</p>
-                        <p>Powerful interior presence with gap penetration</p>
-
-                        <input type="radio" id="downs" name="player" value="downs">
-                        <label for="downs">Caleb Downs - S, Ohio State</label>
-                        <p>Draft Projection: 1st Round</p>
-                        <p>Rangy safety with excellent instincts</p>
-
-                        <input type="radio" id="terrell" name="player" value="terrell">
-                        <label for="terrell">Avieon Terrell - CB, Clemson</label>
-                        <p>Draft Projection: 2nd Round</p>
-                        <p>Physical corner with good technique</p>
-
-                        <input type="radio" id="angeli" name="player" value="angeli">
-                        <label for="angeli">Steve Angeli - QB, Syracuse</label>
-                        <p>Draft Projection: 3rd-4th Round</p>
-                        <p>Smart quarterback with good arm talent</p>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Your Information</legend>
-                        <label for="userName">Your Name:</label>
-                        <input type="text" id="userName" name="userName" required>
-                        
-                        <label for="userEmail">Email (optional):</label>
-                        <input type="email" id="userEmail" name="userEmail">
-                        
-                        <label for="draftNotes">Draft Notes:</label>
-                        <textarea id="draftNotes" name="draftNotes" rows="4" cols="50" placeholder="Add notes about your pick..."></textarea>
-                    </fieldset>
-
-                    <button type="submit">Make Selection</button>
-                    <button type="reset">Clear Selection</button>
-                </form>
+                <ul class="player-list" id="available-list">
+                    <li>
+                        <div class="player-card" 
+                             id="player-1" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Steve Angeli QB Syracuse
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-2" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Caleb Downs S Ohio State
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-3" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Arch Manning QB Texas
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-4" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Avieon Terrell CB Clemson
+                        </div>
+                    </li>
+                    
+                </ul>
+                
             </section>
         </div>
+        
     </main>
 
     <footer>
@@ -159,5 +203,42 @@
         <p>Contact: <a href="mailto:info@cfbscout.com">info@cfbscout.com</a></p>
         <p>Follow us on social media for the latest scouting updates and draft analysis</p>
     </footer>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+
+            if (ev.target.classList.contains('drop-zone') && ev.target.children.length === 0) {
+                
+                ev.target.textContent = ''; 
+                ev.target.appendChild(draggedElement);
+                draggedElement.draggable = false;
+                
+            } else {
+                console.log("Invalid drop location or pick spot is already filled.");
+            }
+        }
+        
+        document.querySelectorAll('.drop-zone').forEach(dz => {
+            dz.addEventListener('dragenter', (e) => {
+                e.preventDefault();
+            });
+            dz.addEventListener('dragleave', (e) => {
+            });
+            dz.addEventListener('dragover', allowDrop);
+        });
+        
+    </script>
 </body>
 </html>
