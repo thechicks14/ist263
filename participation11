@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First JavaScript Program</title>
+  <style>
+    h1 {cursor: pointer;}
+  </style>
+</head>
+
+<body>
+    <h1>Classic First JavaScript Program</h1>
+    <p>Latin Stuff Latin Stuff Latin Stuff Latin Stuff</p>
+    <p>More Latin Stuff More Latin Stuff More Latin Stuff More Latin Stuff More Latin Stuff More Latin Stuff </p>
+</body>
+</html>
