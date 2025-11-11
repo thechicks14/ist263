@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participation 12</title>
+  <style>
+    #school {
+      font-size: 2em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="school">Syracuse University</div>
+
+  <script>
+    document.getElementById("school").onclick = function() {
+      this.innerHTML = "Orange Nation";
+      this.style.color = "orange";
+    };
+  </script>
+
+</body>
+
+</html>
