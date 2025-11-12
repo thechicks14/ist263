@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planet Slideshow - Lab 12</title>
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +18,6 @@
       color: #ffd700;
     }
 
-    /* Layout containers */
     #slideshow {
       width: 80%;
       margin: 0 auto;
@@ -35,7 +35,6 @@
       text-align: left;
     }
 
-    /* Hide all planets and text except Mercury */
     #venus, #earth, #mars, #jupiter, #saturn, #uranus, #neptune {
       display: none;
     }
@@ -43,7 +42,6 @@
       display: none;
     }
 
-    /* Thumbnails */
     #thumbnails {
       clear: both;
       margin-top: 40px;
@@ -65,11 +63,11 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Planet Slideshow</h1>
 
   <div id="slideshow">
-    <!-- Large planet images -->
     <div id="planet">
       <img id="mercury" src="images/mercury.jpg" alt="Mercury" width="100%">
       <img id="venus" src="images/venus.jpg" alt="Venus" width="100%">
@@ -81,7 +79,6 @@
       <img id="neptune" src="images/neptune.jpg" alt="Neptune" width="100%">
     </div>
 
-    <!-- Planet info -->
     <div id="planetinfo">
       <div id="mercuryinfo">
         <h2>Mercury</h2>
@@ -118,21 +115,19 @@
     </div>
   </div>
 
-  <!-- Thumbnails -->
   <div id="thumbnails">
-    <img src="images/mercury-thumb.jpg" alt="Mercury" onclick="PlanetsOff(); MercuryOn();">
-    <img src="images/venus-thumb.jpg" alt="Venus" onclick="PlanetsOff(); VenusOn();">
-    <img src="images/earth-thumb.jpg" alt="Earth" onclick="PlanetsOff(); EarthOn();">
-    <img src="images/mars-thumb.jpg" alt="Mars" onclick="PlanetsOff(); MarsOn();">
-    <img src="images/jupiter-thumb.jpg" alt="Jupiter" onclick="PlanetsOff(); JupiterOn();">
-    <img src="images/saturn-thumb.jpg" alt="Saturn" onclick="PlanetsOff(); SaturnOn();">
-    <img src="images/uranus-thumb.jpg" alt="Uranus" onclick="PlanetsOff(); UranusOn();">
-    <img src="images/neptune-thumb.jpg" alt="Neptune" onclick="PlanetsOff(); NeptuneOn();">
-  </div>
+         <img src="./Lab 12 Slideshow_files/mecury.jpg" alt="mercury" id="mercury">
+         <img src="./Lab 12 Slideshow_files/venus.jpg" alt="venus" id="venus">
+         <img src="./Lab 12 Slideshow_files/earth.jpg" alt="earth" id="earth">
+         <img src="./Lab 12 Slideshow_files/mars.jpg" alt="mars" id="mars">
+         <img src="./Lab 12 Slideshow_files/jupiter.jpg" alt="jupiter" id="jupiter">
+         <img src="./Lab 12 Slideshow_files/saturn.jpg" alt="saturn" id="saturn">
+         <img src="./Lab 12 Slideshow_files/uranus.jpg" alt="uranus" id="uranus">
+         <img src="./Lab 12 Slideshow_files/neptune.jpg" alt="neptune" id="neptune">
+     </div>
 
   <script>
     function PlanetsOff() {
-      // Turn off all planet images
       document.getElementById('mercury').style.display = 'none';
       document.getElementById('venus').style.display = 'none';
       document.getElementById('earth').style.display = 'none';
@@ -141,7 +136,6 @@
       document.getElementById('saturn').style.display = 'none';
       document.getElementById('uranus').style.display = 'none';
       document.getElementById('neptune').style.display = 'none';
-      // Turn off all planet info
       document.getElementById('mercuryinfo').style.display = 'none';
       document.getElementById('venusinfo').style.display = 'none';
       document.getElementById('earthinfo').style.display = 'none';
@@ -152,7 +146,6 @@
       document.getElementById('neptuneinfo').style.display = 'none';
     }
 
-    // Turn on one planet at a time
     function MercuryOn() {
       document.getElementById('mercury').style.display = 'block';
       document.getElementById('mercuryinfo').style.display = 'block';
@@ -193,5 +186,6 @@
       document.getElementById('neptuneinfo').style.display = 'block';
     }
   </script>
+
 </body>
 </html>
