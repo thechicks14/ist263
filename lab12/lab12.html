@@ -28,6 +28,8 @@
       width: 100%;
       text-align: center;
       margin-top: 40px;
+      float: left;
+      width: 50%;
     }
 
     #planet img {
@@ -36,30 +38,17 @@
     }
 
     #planetinfo {
-      width: 100%;
-      text-align: center;
+      width: 45%;
+      text-align: left;
       margin-top: 20px;
+      float: right;
+      padding: 20px;
     }
-
-    #thumbnails {
-      margin-top: 60px;
-    }
-
-    #thumbnails img {
-      width: 90px;
-      height: 90px;
-      margin: 8px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-
 
     #venus, #earth, #mars, #jupiter, #saturn, #uranus, #neptune {
       display: none;
     }
+    
     #venusinfo, #earthinfo, #marsinfo, #jupiterinfo, #saturninfo, #uranusinfo, #neptuneinfo {
       display: none;
     }
@@ -90,18 +79,16 @@
   <h1>Planet Slideshow</h1>
 
   <div id="slideshow">
-    <div id="thumbnails">
-      <img src="Lab 12 Slideshow_files/mecury.jpg" alt="Mercury" onclick="PlanetsOff(); MercuryOn();">
-      <img src="Lab 12 Slideshow_files/venus.jpg" alt="Venus" onclick="PlanetsOff(); VenusOn();">
-      <img src="Lab 12 Slideshow_files/earth.jpg" alt="Earth" onclick="PlanetsOff(); EarthOn();">
-      <img src="Lab 12 Slideshow_files/mars.jpg" alt="Mars" onclick="PlanetsOff(); MarsOn();">
-      <img src="Lab 12 Slideshow_files/jupiter.jpg" alt="Jupiter" onclick="PlanetsOff(); JupiterOn();">
-      <img src="Lab 12 Slideshow_files/saturn.jpg" alt="Saturn" onclick="PlanetsOff(); SaturnOn();">
-      <img src="Lab 12 Slideshow_files/uranus.jpg" alt="Uranus" onclick="PlanetsOff(); UranusOn();">
-      <img src="Lab 12 Slideshow_files/neptune.jpg" alt="Neptune" onclick="PlanetsOff(); NeptuneOn();">
+    <div id="planet">
+      <img src="Lab 12 Slideshow_files/mecury.jpg" alt="mercury" id="mercury">
+      <img src="Lab 12 Slideshow_files/venus.jpg" alt="venus" id="venus">
+      <img src="Lab 12 Slideshow_files/earth.jpg" alt="earth" id="earth">
+      <img src="Lab 12 Slideshow_files/mars.jpg" alt="mars" id="mars">
+      <img src="Lab 12 Slideshow_files/jupiter.jpg" alt="jupiter" id="jupiter">
+      <img src="Lab 12 Slideshow_files/saturn.jpg" alt="saturn" id="saturn">
+      <img src="Lab 12 Slideshow_files/uranus.jpg" alt="uranus" id="uranus">
+      <img src="Lab 12 Slideshow_files/neptune.jpg" alt="neptune" id="neptune">
     </div>
-
-
 
     <div id="planetinfo">
       <div id="mercuryinfo">
@@ -130,26 +117,25 @@
       </div>
       <div id="uranusinfo">
         <h2>Uranus</h2>
-        <p>Uranus rotates on its side and has faint rings. It’s a cold, icy gas giant.</p>
+        <p>Uranus rotates on its side and has faint rings. It's a cold, icy gas giant.</p>
       </div>
       <div id="neptuneinfo">
         <h2>Neptune</h2>
         <p>Neptune is the farthest planet from the Sun and has strong winds and storms.</p>
       </div>
     </div>
-  </div>
 
-  <div id="thumbnails">
-         <img src="./Lab 12 Slideshow_files/mecury.jpg" alt="mercury" id="mercury">
-         <img src="./Lab 12 Slideshow_files/venus.jpg" alt="venus" id="venus">
-         <img src="./Lab 12 Slideshow_files/earth.jpg" alt="earth" id="earth">
-         <img src="./Lab 12 Slideshow_files/mars.jpg" alt="mars" id="mars">
-         <img src="./Lab 12 Slideshow_files/jupiter.jpg" alt="jupiter" id="jupiter">
-         <img src="./Lab 12 Slideshow_files/saturn.jpg" alt="saturn" id="saturn">
-         <img src="./Lab 12 Slideshow_files/uranus.jpg" alt="uranus" id="uranus">
-         <img src="./Lab 12 Slideshow_files/neptune.jpg" alt="neptune" id="neptune">
-     </div>
-     
+    <div id="thumbnails">
+      <img src="Lab 12 Slideshow_files/mecury.jpg" alt="Mercury" onclick="PlanetsOff(); MercuryOn();">
+      <img src="Lab 12 Slideshow_files/venus.jpg" alt="Venus" onclick="PlanetsOff(); VenusOn();">
+      <img src="Lab 12 Slideshow_files/earth.jpg" alt="Earth" onclick="PlanetsOff(); EarthOn();">
+      <img src="Lab 12 Slideshow_files/mars.jpg" alt="Mars" onclick="PlanetsOff(); MarsOn();">
+      <img src="Lab 12 Slideshow_files/jupiter.jpg" alt="Jupiter" onclick="PlanetsOff(); JupiterOn();">
+      <img src="Lab 12 Slideshow_files/saturn.jpg" alt="Saturn" onclick="PlanetsOff(); SaturnOn();">
+      <img src="Lab 12 Slideshow_files/uranus.jpg" alt="Uranus" onclick="PlanetsOff(); UranusOn();">
+      <img src="Lab 12 Slideshow_files/neptune.jpg" alt="Neptune" onclick="PlanetsOff(); NeptuneOn();">
+    </div>
+  </div>
 
   <script>
     function PlanetsOff() {
