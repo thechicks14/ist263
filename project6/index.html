@@ -124,11 +124,13 @@
             margin: 0 auto; 
         }
 
+        /* --- MODIFIED: Player cards now in a single column --- */
         .player-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex; /* Use Flexbox for straightforward stacking */
+            flex-direction: column; /* Stack the articles vertically */
             gap: 20px;
         }
+        /* --- END MODIFIED --- */
         
         article {
             background-color: var(--background-dark);
