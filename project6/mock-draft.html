@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Draft Simulator | CFB Scout</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li a {
+            text-decoration: none;
+            padding: 10px 5px;
+            display: block;
+        }
+        
+        main {
+            padding: 20px;
+        }
+
+        #draft-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .draft-box {
+            padding: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .draft-box h3 {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .draft-list, .player-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .draft-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid black;
+        }
+
+        .player-card {
+            border: 1px solid black;
+            padding: 5px 10px;
+            cursor: grab;
+            font-weight: normal;
+        }
+        
+        .drop-zone {
+            flex-grow: 1;
+            text-align: right;
+            padding: 5px;
+            border: 1px dashed black;
+            min-height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            #draft-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CFB Scout</h1>
+        <p>Your comprehensive college football scouting database and mock draft simulator</p>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Player List</a></li>
+                <li><a href="player-bio.html">Player Bios</a></li>
+                <li><a href="mock-draft.html">Mock Draft Simulator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>2026 NFL Mock Draft Simulator</h2>
+            <p>Drag a player from the Available Players list into the **Drop Zone** next to the NFL team to make your pick.</p>
+        </section>
+
+        <div id="draft-container">
+            
+            <section id="draft-results" class="draft-box">
+                
+                <h3>Round 1 Picks</h3>
+                <ul class="draft-list">
+                    <li id="pick-1">
+                        <span>1. New York Giants</span>
+                        <div class="drop-zone" id="dz-1" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
+
+                    <li id="pick-2">
+                        <span>2. Las Vegas Raiders</span>
+                        <div class="drop-zone" id="dz-2" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
+
+                    <li id="pick-3">
+                        <span>3. Tennessee Titans</span>
+                        <div class="drop-zone" id="dz-3" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
+
+                    <li id="pick-4">
+                        <span>4. Jacksonville Jaguars</span>
+                        <div class="drop-zone" id="dz-4" ondragover="allowDrop(event)" ondrop="drop(event)">
+                            Drag Player Here
+                        </div>
+                    </li>
+                
+                </ul>
+            </section>
+
+            <section id="available-players" class="draft-box">                
+                
+                <h3>Available Players</h3>
+                <ul class="player-list" id="available-list">
+                    <li>
+                        <div class="player-card" 
+                             id="player-1" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Steve Angeli QB Syracuse
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-2" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Caleb Downs S Ohio State
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-3" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Arch Manning QB Texas
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-card" 
+                             id="player-4" 
+                             draggable="true" 
+                             ondragstart="drag(event)">
+                            Avieon Terrell CB Clemson
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+            </section>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CFB Scout. All rights reserved.</p>
+        <p>Contact: <a href="mailto:cfhicks@syr.edu">cfhicks@syr.edu</a></p>
+        <p>Follow us on social media for the latest scouting updates and draft analysis</p>
+    </footer>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+
+            if (ev.target.classList.contains('drop-zone') && ev.target.children.length === 0) {
+                
+                ev.target.textContent = ''; 
+                ev.target.appendChild(draggedElement);
+                draggedElement.draggable = false;
+                
+            } else {
+                console.log("Invalid drop location or pick spot is already filled.");
+            }
+        }
+        
+        document.querySelectorAll('.drop-zone').forEach(dz => {
+            dz.addEventListener('dragenter', (e) => {
+                e.preventDefault();
+            });
+            dz.addEventListener('dragleave', (e) => {
+            });
+            dz.addEventListener('dragover', allowDrop);
+        });
+        
+    </script>
+</body>
+</html>
