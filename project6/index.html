@@ -138,6 +138,11 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding-bottom: 0; 
         }
 
         article:hover {
@@ -147,37 +152,37 @@
 
         article h3 {
             color: var(--secondary-color);
-            margin-bottom: 10px;
-            font-size: 1.5em;
+            margin-bottom: 15px; 
+            font-size: 1.8em; 
+            width: 100%; 
+            padding-top: 10px;
         }
 
         article img {
             border-radius: 50%;
-            margin: 10px 0;
+            margin-bottom: 15px; 
             border: 3px solid var(--primary-color);
             object-fit: cover;
+            width: 120px; 
+            height: 120px; 
         }
 
-        article ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
+        .player-name-container {
+            width: 100%; 
+            background-color: #3a3a3a; 
+            padding: 15px 10px; 
+            border-radius: 0 0 8px 8px; 
+            margin-top: auto; 
         }
 
-        article li {
-            background-color: #3a3a3a;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 4px;
+        .player-name-container a {
+            color: var(--text-light); 
             font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        article li a {
-            color: var(--text-light);
+            font-size: 1.2em;
+            display: block; 
         }
         
-        article li a:hover {
+        .player-name-container a:hover {
             color: var(--secondary-color);
             text-decoration: none;
         }
@@ -255,6 +260,11 @@
             footer p {
                 max-width: 90%; 
             }
+
+            article {
+                padding-left: 0; 
+                padding-right: 0; 
+            }
         }
     </style>
 </head>
@@ -281,34 +291,34 @@
         <section class="player-cards-grid">
             <article>
                 <h3>Syracuse</h3>
-                <img src="mockdraftimages/angeli_photo.jpg" alt="Syracuse Orange Logo" width="100" height="100">
-                <ul>
-                    <li><a href="player-bio.html">Steve Angeli (QB)</a></li>
-                </ul>
+                <img src="mockdraftimages/angeli_photo.jpg" alt="Syracuse Orange Logo">
+                <div class="player-name-container">
+                    <a href="player-bio.html">Steve Angeli (QB)</a>
+                </div>
             </article>
 
             <article>
                 <h3>Clemson</h3>
-                <img src="mockdraftimages/terrell_photo.jpg" alt="Clemson Tigers Logo" width="100" height="100">
-                <ul>
-                    <li>Avieon Terrell (CB)</li>
-                </ul>
+                <img src="mockdraftimages/terrell_photo.jpg" alt="Clemson Tigers Logo">
+                <div class="player-name-container">
+                    <a href="player-bio.html">Avieon Terrell (CB)</a>
+                </div>
             </article>
 
             <article>
                 <h3>Ohio State</h3>
-                <img src="mockdraftimages/downs_photo.jpg" alt="Ohio State Buckeyes Logo" width="100" height="100">
-                <ul>
-                    <li>Caleb Downs (S)</li>
-                </ul>
+                <img src="mockdraftimages/downs_photo.jpg" alt="Ohio State Buckeyes Logo">
+                <div class="player-name-container">
+                    <a href="player-bio.html">Caleb Downs (S)</a>
+                </div>
             </article>
 
             <article>
                 <h3>Texas</h3>
-                <img src="mockdraftimages/manning_photo.jpg" alt="Texas Longhorns Logo" width="100" height="100">
-                <ul>
-                    <li>Arch Manning (QB)</li>
-                </ul>
+                <img src="mockdraftimages/manning_photo.jpg" alt="Texas Longhorns Logo">
+                <div class="player-name-container">
+                    <a href="player-bio.html">Arch Manning (QB)</a>
+                </div>
             </article>
         </section>
     </main>
