@@ -13,7 +13,7 @@ body {
   left: -9999px;
   z-index: 999;
   background-color: #E9C46A;
-  color: #1D3557;
+  color: #000000;
   padding: 0.75rem;
   border: 1px solid #1D3557;
   text-decoration: none;
@@ -55,7 +55,7 @@ header nav a {
 }
 
 header nav a:hover {
-  background-color: #E9C46A;
+  background-color: #ccc9c0;
   color: #1D3557;
 }
 
