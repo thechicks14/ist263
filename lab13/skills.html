@@ -3,92 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connor Hicks | IST 263</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css"> 
 </head>
 
 <body>
-  <a href="#main-content" class="skip-to-content">Skip to Main Content</a>
-
   <header>
     <nav aria-label="Main Navigation">
       <a href="index.html">Home</a> <span class="pipe" aria-hidden="true">|</span>
       <a href="skills.html">My Skills</a> <span class="pipe" aria-hidden="true">|</span>
       <a href="contact.html">Contact Me</a>
     </nav>
-    
-    <h1>IST 263</h1>
-    <h2>Web Development Lifecycle, Site Maps, and Styling</h2>
-    
-    <img src="1694218532561.jpg" alt="Smiling portrait of Connor Hicks" class="responsive-img">
   </header>
 
-  <main id="main-content">
-    
-    <section>
-      <h3>About Me</h3>
-       <p>
-        I'm Connor Hicks, a motivated student at Syracuse University studying Information Studies and Technology. 
-        I'm passionate about web development, UX/UI design, and creative problem solving. 
-        I combine technical skills with strong communication and leadership experience.
-      </p>
+  <main>
+    <h1>Contact</h1>
+
+    <section class="contact-info">
+      <h2 class="sr-only">Contact Information and Links</h2>
+      <div class="contact-container">
+        <div class="row row1">
+          <section class="column address">
+            <h3>Address</h3>
+            <p>North Attleboro<br>Massachusetts, MA</p>
+          </section>
+
+          <section class="column contact-links">
+            <h3>Contact Links</h3>
+            <ul>
+              <li>Email: <a href="mailto:cfhicks@syr.edu">Send me an email</a></li>
+              <li>LinkedIn:
+                <a href="https://www.linkedin.com/in/connor-hicks-syracuse/" target="_blank" rel="noopener noreferrer">
+                  View my LinkedIn profile
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h3>Key Skills</h3>
-      <ul>
-        <li>Front-End Web Development (HTML, CSS, JavaScript)</li>
-        <li>Responsive Design and Accessibility</li>
-        <li>SQL Database Management and Data Visualization</li>
-        <li>Adobe Creative Cloud (Photoshop, Illustrator, XD)</li>
-        <li>Strong teamwork, organization, and client communication</li>
-      </ul>
+    <section class="messaging-and-location">
+      <h2 class="sr-only">Send a Message and Location</h2>
+      <div class="row row2 form-map-row">
+        <section class="column form-box">
+          <h3>Send Me a Message</h3>
+          <form action="#" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+
+        <section class="column map-box">
+          <h3>My Location</h3>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11822.42774312689!2d-71.36531985959891!3d41.97341829631777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4726487e915fd%3A0x6a164a66a3ef1c0e!2sNorth%20Attleboro%2C%20MA!5e0!3m2!1sen!2sus!4v1694220000000!5m2!1sen!2sus"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Interactive map showing the location of North Attleboro, Massachusetts">
+          </iframe>
+        </section>
+      </div>
     </section>
 
-    <section>
-      <h3>Experience Highlights</h3>
-      <ol>
-        <li><strong>Web Design Projects</strong> - Created and deployed responsive websites using HTML and CSS for class and freelance projects.</li>
-        <li><strong>Team Collaboration</strong> - Worked on group tech projects applying Agile principles and version control with GitHub.</li>
-        <li><strong>Technical Coursework</strong> - Completed projects in SQL, UX design, and data analysis through Syracuse's iSchool.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h3>Education</h3>
-      <p><strong>Syracuse University</strong><br>
-      B.S. Information Management and Technology<br>
-      Expected Graduation: 2026</p>
-    </section>
-
-    <section>
-      <h3>Color Scheme Planning</h3>
-      <p>
-        Choose your color palette using <a href="https://www.color-hex.com/color-palettes/popular.php" target="_blank" rel="noopener noreferrer">this color palette tool</a>.
-        Record your hex colors in your style document for:
-      </p>
-      <ul>
-        <li>Body background</li>
-        <li>Text</li>
-        <li>Links</li>
-        <li>Headings</li>
-        <li>Navigation background</li>
-        <li>Navigation highlight</li>
-        <li>Navigation link color</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Project Next Steps</h3>
-      <p>
-        Once your style is chosen, update this index page and your <strong>skills</strong> and <strong>contact</strong> pages to include the same navigation bar and styles.
-        Don't forget to validate your HTML and submit your GitHub URL and validation link as required.
-      </p>
-    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Connor Hicks | IST 263</p>
+    <p>© 2025 Connor Hicks | IST 263</p>
   </footer>
 </body>
 </html>
