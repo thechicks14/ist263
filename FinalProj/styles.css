@@ -1,3 +1,10 @@
+p{
+  font-family: "Graduate", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 :root {
     --primary-color: #007bff;
     --secondary-color: #ffc107;
