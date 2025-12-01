@@ -161,41 +161,46 @@ article h3 {
     font-size: 1.8em; 
     flex-grow: 1;
     text-align: left;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0;
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article h3:hover {
+    background-color: #ddd;
+}
+
+article h3::after {
+    content: '▼';
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+article h3.active::after {
+    transform: rotate(180deg);
 }
 
 .player-info-wrapper {
-    display: flex; 
-    align-items: center; 
-    gap: 15px;
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
 }
 
-article img {
-    border-radius: 50%;
-    border: 3px solid var(--primary-color);
-    object-fit: cover;
-    width: 80px;
-    height: 80px; 
-    margin: 0;
-    object-position: 40% 20%; 
-}
-
-.player-name-container {
-    background-color: #3a3a3a; 
-    padding: 10px 15px; 
+article {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
     border-radius: 5px;
-    text-align: center;
+    overflow: hidden;
 }
 
-.player-name-container a {
-    color: var(--text-light); 
-    font-weight: bold;
-    font-size: 1.2em;
-    display: block; 
-}
-
-.player-name-container a:hover {
-    color: var(--secondary-color);
-    text-decoration: none;
+/* class to show the content */
+.player-info-wrapper.open {
+    display: block;
 }
 
 /* FOOTER */
