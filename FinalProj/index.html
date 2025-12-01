@@ -7,17 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* ADDED: Styles for the dropdown functionality */
-        
-        /* This hides the player info by default */
-        .player-info-wrapper {
+            .player-info-wrapper {
             display: none;
             padding: 10px;
             background-color: #f9f9f9;
             border-top: 2px solid #ddd;
         }
 
-        /* This styles the School Name (the clickable trigger) */
         article h3 {
             cursor: pointer;
             padding: 10px;
@@ -32,19 +28,16 @@
             background-color: #ddd;
         }
 
-        /* This creates the little arrow icon */
         article h3::after {
             content: '▼';
             font-size: 0.8em;
             transition: transform 0.3s ease;
         }
 
-        /* This class is added by JS to rotate the arrow when open */
         article h3.active::after {
             transform: rotate(180deg);
         }
 
-        /* Ensure the card has a border so it looks like a container */
         article {
             border: 1px solid #ccc;
             margin-bottom: 15px;
@@ -136,18 +129,14 @@
     </footer>
 
     <script>
-        // Get all elements with the class 'school-trigger' (the h3 headers)
         const headers = document.querySelectorAll('.school-trigger');
 
         headers.forEach(header => {
             header.addEventListener('click', () => {
-                // Toggle the 'active' class on the header (for the arrow rotation)
                 header.classList.toggle('active');
 
-                // Find the next element sibling (the player-info-wrapper)
                 const content = header.nextElementSibling;
 
-                // Toggle visibility
                 if (content.style.display === "block") {
                     content.style.display = "none";
                 } else {
