@@ -204,15 +204,21 @@ article {
     cursor: pointer;
 }
 
+.school-name {
+    flex: 1; /* keeps name left and pushes logo to the right */
+    font-weight: 600;
+}
+
 .school-logo {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
     display: block;
 }
 
+/* adjust if needed on very small screens */
 @media (max-width: 420px) {
-    .school-logo { width: 28px; height: 28px; }
+    .school-logo { width: 22px; height: 22px; }
 }
 
 footer {
