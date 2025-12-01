@@ -252,6 +252,30 @@ footer p {
     margin: 5px 0;
 }
 
+.player-entry {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.player-entry img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex: 0 0 64px;
+}
+
+/* smaller on narrow screens */
+@media (max-width: 420px) {
+    .player-entry img {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+    }
+}
+
 @media (max-width: 768px) {
     
     :root {
