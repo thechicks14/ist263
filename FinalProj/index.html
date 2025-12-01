@@ -6,6 +6,53 @@
     <title>CFB Scout - College Football Scouting Database</title>
     <link rel="stylesheet" href="styles.css">
 
+    <style>
+        /* ADDED: Styles for the dropdown functionality */
+        
+        /* This hides the player info by default */
+        .player-info-wrapper {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 2px solid #ddd;
+        }
+
+        /* This styles the School Name (the clickable trigger) */
+        article h3 {
+            cursor: pointer;
+            padding: 10px;
+            margin: 0;
+            background-color: #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        article h3:hover {
+            background-color: #ddd;
+        }
+
+        /* This creates the little arrow icon */
+        article h3::after {
+            content: '▼';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        /* This class is added by JS to rotate the arrow when open */
+        article h3.active::after {
+            transform: rotate(180deg);
+        }
+
+        /* Ensure the card has a border so it looks like a container */
+        article {
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+    </style>
+
 </head>
 <body>
     <header>
@@ -28,46 +75,54 @@
     <main>
         <div class="section-header">
             <h2>Player List 📋</h2>
-            <p>After selecting a college, you will be redirected to a page that contains a list of that school's player prospects.</p>
+            <p>Click on a college below to see the list of that school's player prospects.</p>
         </div>
 
         <div class="player-cards-grid">
             <article>
-                <h3>Syracuse</h3>
+                <h3 class="school-trigger">Syracuse</h3>
                 <div class="player-info-wrapper">
-                    <img src="mockdraftimages/angeli_photo.jpg" alt="Syracuse Orange Logo">
-                    <div class="player-name-container">
-                        <a href="player-bio.html">Steve Angeli (QB)</a>
+                    <div class="player-entry">
+                        <img src="mockdraftimages/angeli_photo.jpg" alt="Steve Angeli">
+                        <div class="player-name-container">
+                            <a href="player-bio.html">Steve Angeli (QB)</a>
+                        </div>
                     </div>
                 </div>
             </article>
 
             <article>
-                <h3>Clemson</h3>
+                <h3 class="school-trigger">Clemson</h3>
                 <div class="player-info-wrapper">
-                    <img src="mockdraftimages/terrell_photo.jpg" alt="Clemson Tigers Logo">
-                    <div class="player-name-container">
-                        <a href="player-bio.html">Avieon Terrell (CB)</a>
+                    <div class="player-entry">
+                        <img src="mockdraftimages/terrell_photo.jpg" alt="Avieon Terrell">
+                        <div class="player-name-container">
+                            <a href="player-bio.html">Avieon Terrell (CB)</a>
+                        </div>
                     </div>
                 </div>
             </article>
 
             <article>
-                <h3>Ohio State</h3>
+                <h3 class="school-trigger">Ohio State</h3>
                 <div class="player-info-wrapper">
-                    <img src="mockdraftimages/downs_photo.jpg" alt="Ohio State Buckeyes Logo">
-                    <div class="player-name-container">
-                        <a href="player-bio.html">Caleb Downs (S)</a>
+                    <div class="player-entry">
+                        <img src="mockdraftimages/downs_photo.jpg" alt="Caleb Downs">
+                        <div class="player-name-container">
+                            <a href="player-bio.html">Caleb Downs (S)</a>
+                        </div>
                     </div>
                 </div>
             </article>
 
             <article>
-                <h3>Texas</h3>
+                <h3 class="school-trigger">Texas</h3>
                 <div class="player-info-wrapper">
-                    <img src="mockdraftimages/manning_photo.jpg" alt="Texas Longhorns Logo">
-                    <div class="player-name-container">
-                        <a href="player-bio.html">Arch Manning (QB)</a>
+                    <div class="player-entry">
+                        <img src="mockdraftimages/manning_photo.jpg" alt="Arch Manning">
+                        <div class="player-name-container">
+                            <a href="player-bio.html">Arch Manning (QB)</a>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -79,5 +134,27 @@
         <p>Contact: <a href="mailto:cfhicks@syr.edu">cfhicks@syr.edu</a></p>
         <p>Follow me on social media for the latest scouting updates and draft analysis</p>
     </footer>
+
+    <script>
+        // Get all elements with the class 'school-trigger' (the h3 headers)
+        const headers = document.querySelectorAll('.school-trigger');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                // Toggle the 'active' class on the header (for the arrow rotation)
+                header.classList.toggle('active');
+
+                // Find the next element sibling (the player-info-wrapper)
+                const content = header.nextElementSibling;
+
+                // Toggle visibility
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
