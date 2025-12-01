@@ -33,7 +33,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* HEADER */
 header {
     background-color: #0d0d0d;
     color: var(--text-light);
@@ -72,7 +71,6 @@ header p {
     max-width: 600px;
 }
 
-/* NAVIGATION */
 nav ul {
     list-style: none;
     display: flex;
@@ -99,7 +97,6 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* MAIN CONTAINER */
 main {
     padding: 20px;
     max-width: 1200px;
@@ -109,7 +106,6 @@ main {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* SECTION HEADER */
 .section-header {
     text-align: center;
     margin-bottom: 30px;
@@ -130,7 +126,6 @@ main {
     margin: 0 auto; 
 }
 
-/* PLAYER GRID */
 .player-cards-grid {
     display: flex;
     flex-direction: column;
@@ -198,12 +193,28 @@ article {
     overflow: hidden;
 }
 
-/* class to show the content */
 .player-info-wrapper.open {
     display: block;
 }
 
-/* FOOTER */
+.school-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.school-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 420px) {
+    .school-logo { width: 28px; height: 28px; }
+}
+
 footer {
     background-color: #0d0d0d;
     color: #aaa;
@@ -220,7 +231,6 @@ footer p {
     margin: 5px 0;
 }
 
-/* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
     
     :root {
