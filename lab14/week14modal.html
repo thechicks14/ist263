@@ -13,6 +13,16 @@
             padding: 5px;
         }
         /* write CSS to position our subscribe form and hide it when the page loads here */
+        #modal {
+           postition: absolute;
+           width: 300px;
+           top: 200px;
+           left: 600px;
+           background-color: white;
+           padding: 1em;
+           border: 1px black solid;
+        }
+    
     </style>
     <script>
         /* add code to open and close our subscribe form */
@@ -34,7 +44,7 @@
 
         <!-- make a subscribe form here -->
          <div id="modal">
-            <p> class="close">X</p>
+            <p>class="close">X</p>
             <form>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">
