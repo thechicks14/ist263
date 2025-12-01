@@ -198,25 +198,32 @@ article {
 }
 
 .school-trigger {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
+    padding: 6px 8px;
+    justify-content: flex-start;
 }
 
-.school-name {
-    flex: 1; /* keeps name left and pushes logo to the right */
+.school-trigger .school-name {
+    flex: unset;
+    margin: 0;
     font-weight: 600;
 }
 
 .school-logo {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     display: block;
 }
 
-/* adjust if needed on very small screens */
+/* optional responsiveness */
+@media (min-width: 900px) {
+    .school-logo { width: 28px; height: 28px; }
+}
+
 @media (max-width: 420px) {
     .school-logo { width: 22px; height: 22px; }
 }
