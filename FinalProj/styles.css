@@ -61,6 +61,7 @@ header h1 {
     margin-bottom: 5px;
     color: var(--secondary-color);
     letter-spacing: 2px;
+    font-family: 'Graduate', Arial, sans-serif;
 }
 
 header p {
@@ -216,6 +217,7 @@ article {
     flex: unset;
     margin: 0;
     font-weight: 600;
+    font-family: 'Graduate', Arial, sans-serif;
 }
 
 .school-logo {
