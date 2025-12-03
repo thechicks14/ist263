@@ -133,98 +133,125 @@ main {
     margin: 0 auto; 
 }
 
+/* layout: one school per row */
 .player-cards-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr; /* one column so each article spans across */
+    gap: 18px;
+    padding: 16px;
 }
 
+/* card visual: full-width strip with dark header */
 article {
-    background-color: var(--background-dark);
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex; 
-    flex-direction: row;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 10px 15px;
+    background: #efefef;
+    color: #111;
+    border-radius: 6px;
+    border: 6px solid #121126;
+    overflow: hidden;
+    transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 0 15px var(--secondary-color);
-}
-
-article h3 {
-    color: var(--secondary-color);
-    font-size: 1.8em; 
-    flex-grow: 1;
-    text-align: left;
-    cursor: pointer;
-    padding: 10px;
-    margin: 0;
-    background-color: #eee;
+/* header strip inside each card: long across, clickable */
+article h3.school-trigger {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* name left, logo/chev right */
+    gap: 10px;
+    padding: 12px 18px;
+    background: #0d0d0d;
+    color: var(--secondary-color);
+    font-family: 'Graduate', Arial, sans-serif;
+    cursor: pointer;
 }
 
-article h3:hover {
-    background-color: #ddd;
-}
+/* chevron / small logo already present — keep them aligned */
+.school-name { font-size: 1.1rem; font-weight: 700; }
+.school-logo { width: 28px; height: 28px; object-fit: contain; }
 
-article h3::after {
-    content: '▼';
-    font-size: 0.8em;
-    transition: transform 0.3s ease;
-}
-
-article h3.active::after {
-    transform: rotate(180deg);
-}
-
+/* collapsed content hidden */
 .player-info-wrapper {
     display: none;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-top: 2px solid #ddd;
+    padding: 20px;
+    background: #f2f2f2;
 }
 
-article {
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
+/* when opened: show grid of big player cards inside that article */
 .player-info-wrapper.open {
-    display: block;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    justify-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.school-trigger {
-    display: inline-flex;
+/* uniform card container */
+.player-info-wrapper.open .player-entry {
+    width: 260px;              /* card width */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    padding: 6px 8px;
-    justify-content: flex-start;
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    min-height: 320px;        /* ensures same overall height */
+    box-sizing: border-box;
 }
 
-.school-trigger .school-name {
-    flex: unset;
-    margin: 0;
-    font-weight: 600;
-    font-family: 'Graduate', Arial, sans-serif;
-}
-
-.school-logo {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+/* fixed-size images inside each card (consistent crop) */
+.player-info-wrapper.open .player-entry img {
+    width: 100%;
+    height: 220px;            /* fixed image height */
+    object-fit: cover;
+    border-radius: 4px;
     display: block;
+    flex: 0 0 auto;
+}
+
+/* center and keep name area consistent */
+.player-info-wrapper.open .player-name-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    flex: 1 0 auto;
+}
+
+/* individual player card inside the expanded area */
+.player-info-wrapper .player-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+/* big, consistent player images */
+.player-info-wrapper .player-entry img {
+    width: 100%;
+    height: 220px;        /* change this to make images taller/shorter */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* player name centered beneath photo */
+.player-info-wrapper .player-name-container {
+    width: 100%;
+    text-align: center;
+    padding: 6px 4px;
+}
+.player-info-wrapper .player-name-container a {
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 /* optional responsiveness */
@@ -234,6 +261,17 @@ article {
 
 @media (max-width: 420px) {
     .school-logo { width: 22px; height: 22px; }
+}
+
+@media (max-width: 900px) {
+    .player-info-wrapper.open { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .player-info-wrapper.open .player-entry { width: 220px; min-height: 300px; }
+    .player-info-wrapper.open .player-entry img { height: 200px; }
+}
+@media (max-width: 480px) {
+    .player-info-wrapper.open { grid-template-columns: 1fr; max-width: 420px; padding: 12px; }
+    .player-info-wrapper.open .player-entry { width: 100%; min-height: auto; }
+    .player-info-wrapper.open .player-entry img { height: 160px; }
 }
 
 footer {
@@ -260,14 +298,14 @@ footer p {
 }
 
 .player-entry img {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
+    width: 100px;        /* change this value to make images bigger/smaller */
+    height: 100px;       /* keep width/height equal for square crop */
+    object-fit: cover;  /* crop without stretching */
     border-radius: 6px;
-    flex: 0 0 64px;
+    flex: 0 0 100px;     /* fixed box so text doesn't shift */
 }
 
-/* smaller on narrow screens */
+/* optional smaller size on narrow screens */
 @media (max-width: 420px) {
     .player-entry img {
         width: 48px;
@@ -347,4 +385,20 @@ footer p {
     .player-info-wrapper {
         flex-direction: column;
     }
+}
+
+article.syracuse:hover {
+    box-shadow: 0 30px 30px #F76900, 0 0 50px #F76900;
+}
+article.clemson:hover {
+    box-shadow: 0 30px 30px #F56600, 0 0 50px #F56600
+}
+article.ohio-state:hover {
+    box-shadow: 0 30px 30px #BB0000, 0 0 18px #BB0000;
+}
+article.texas:hover {
+    box-shadow: 0 30px 30px #bf5700, 0 0 50px #bf5700;
+}
+article.miami:hover {
+    box-shadow: 0 30px 30px #005030, 0 0 50px #005030;
 }
