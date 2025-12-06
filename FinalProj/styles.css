@@ -402,3 +402,18 @@ article.texas:hover {
 article.miami:hover {
     box-shadow: 0 30px 30px #005030, 0 0 50px #005030;
 }
+article.penn-state:hover {
+    box-shadow: 0 10px 20px rgba(0, 57, 166, 0.45), 0 0 18px rgba(0, 57, 166, 0.30);
+}
+
+/* Penn State players — adjust object-position per player */
+.penn-state .player-info-wrapper .player-entry:nth-child(1) img { object-position: center 30%; } /* Nick Singleton */
+.penn-state .player-info-wrapper .player-entry:nth-child(2) img { object-position: center 35%; } /* Dennis Dani-Sutton */
+.penn-state .player-info-wrapper .player-entry:nth-child(3) img { object-position: center 25%; } /* AJ Harris */
+.penn-state .player-info-wrapper .player-entry:nth-child(4) img { object-position: center 40%; } /* Olaivavega Ioane */
+.penn-state .player-info-wrapper .player-entry:nth-child(5) img { object-position: center 28%; } /* Kaytron Allen */
+
+/* Do same for other schools if needed */
+.ohio-state .player-info-wrapper .player-entry:nth-child(1) img { object-position: center 32%; } /* Caleb Downs */
+.ohio-state .player-info-wrapper .player-entry:nth-child(2) img { object-position: center 28%; } /* Carnell Tate */
+.ohio-state .player-info-wrapper .player-entry:nth-child(3) img { object-position: center 30%; } /* Sonny Styles */
