@@ -417,3 +417,112 @@ article.penn-state:hover {
 .ohio-state .player-info-wrapper .player-entry:nth-child(1) img { object-position: center 32%; } /* Caleb Downs */
 .ohio-state .player-info-wrapper .player-entry:nth-child(2) img { object-position: center 28%; } /* Carnell Tate */
 .ohio-state .player-info-wrapper .player-entry:nth-child(3) img { object-position: center 30%; } /* Sonny Styles */
+
+/* --- Full-screen vault splash --- */
+.vault-splash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOutSplash 0.6s ease-in-out 3s forwards;
+}
+
+.vault-splash-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@keyframes fadeOutSplash {
+    from {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Optional: dismiss on click */
+.vault-splash-overlay.dismissed {
+    animation: fadeOutSplash 0.4s ease-in-out forwards;
+}
+
+/* --- Login Modal --- */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.login-modal-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 350px;
+    border: 3px solid #121126;
+}
+
+.login-modal-box h2 {
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Graduate', Arial, sans-serif;
+    color: #0d0d2a;
+}
+
+.login-modal-box label {
+    display: block;
+    font-weight: 600;
+    margin-top: 12px;
+    color: #0d0d2a;
+}
+
+.login-modal-box input[type="email"],
+.login-modal-box input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.login-modal-box input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #0d0d2a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.login-modal-box input[type="submit"]:hover {
+    background: #1a1a40;
+}
+
+.login-modal-overlay.hidden {
+    display: none;
+}

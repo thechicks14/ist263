@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CFB Scout - College Football Scouting Database</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="mockdraftimages/small_guy_in_vault (1).ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="vault-splash" class="vault-splash-overlay">
+        <img src="mockdraftimages/vault.gif" alt="Vault Opening" class="vault-splash-image">
+    </div>
+
     <header>
         <h1 style="margin-top: 40px;">CFB Scout 🏈</h1>
         <p>Your comprehensive college football scouting database and mock draft simulator</p>
@@ -192,6 +195,14 @@
                 content.classList.toggle('open'); // toggle CSS class instead of inline style
             });
         });
+
+        const vaultSplash = document.getElementById('vault-splash');
+        if (vaultSplash) 
+            // Click to dismiss
+            vaultSplash.addEventListener('click', () => {
+                vaultSplash.classList.add('dismissed');
+            });
+            
     </script>
 </body>
 </html>
