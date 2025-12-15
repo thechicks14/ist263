@@ -7,7 +7,7 @@ p{
 
 :root {
     --primary-color: #007bff;
-    --secondary-color: #ffc107;
+    --secondary-color: #55d300;
     --background-dark: #030032;
     --background-light: #2c2c2c;
     --text-light: #f4f4f4;
@@ -133,29 +133,26 @@ main {
     margin: 0 auto; 
 }
 
-/* layout: one school per row */
 .player-cards-grid {
     display: grid;
-    grid-template-columns: 1fr; /* one column so each article spans across */
+    grid-template-columns: 1fr;
     gap: 18px;
     padding: 16px;
 }
 
-/* card visual: full-width strip with dark header */
 article {
     background: #efefef;
-    color: #111;
+    color: #111111;
     border-radius: 6px;
     border: 6px solid #121126;
     overflow: hidden;
     transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-/* header strip inside each card: long across, clickable */
 article h3.school-trigger {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* name left, logo/chev right */
+    justify-content: space-between;
     gap: 10px;
     padding: 12px 18px;
     background: #ffffff;
@@ -164,18 +161,15 @@ article h3.school-trigger {
     cursor: pointer;
 }
 
-/* chevron / small logo already present — keep them aligned */
 .school-name { font-size: 1.1rem; font-weight: 700; }
 .school-logo { width: 28px; height: 28px; object-fit: contain; }
 
-/* collapsed content hidden */
 .player-info-wrapper {
     display: none;
     padding: 20px;
     background: #f2f2f2;
 }
 
-/* when opened: show grid of big player cards inside that article */
 .player-info-wrapper.open {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -186,9 +180,8 @@ article h3.school-trigger {
     margin: 0 auto;
 }
 
-/* uniform card container */
 .player-info-wrapper.open .player-entry {
-    width: 260px;              /* card width */
+    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,21 +189,19 @@ article h3.school-trigger {
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.06);
-    min-height: 320px;        /* ensures same overall height */
+    min-height: 320px;
     box-sizing: border-box;
 }
 
-/* fixed-size images inside each card (consistent crop) */
 .player-info-wrapper.open .player-entry img {
     width: 100%;
-    height: 220px;            /* fixed image height */
+    height: 220px;
     object-fit: cover;
     border-radius: 4px;
     display: block;
     flex: 0 0 auto;
 }
 
-/* center and keep name area consistent */
 .player-info-wrapper.open .player-name-container {
     width: 100%;
     text-align: center;
@@ -222,7 +213,6 @@ article h3.school-trigger {
     flex: 1 0 auto;
 }
 
-/* individual player card inside the expanded area */
 .player-info-wrapper .player-entry {
     display: flex;
     flex-direction: column;
@@ -234,15 +224,13 @@ article h3.school-trigger {
     box-shadow: 0 6px 12px rgba(0,0,0,0.06);
 }
 
-/* big, consistent player images */
 .player-info-wrapper .player-entry img {
     width: 100%;
-    height: 220px;        /* change this to make images taller/shorter */
+    height: 220px;
     object-fit: cover;
     border-radius: 4px;
 }
 
-/* player name centered beneath photo */
 .player-info-wrapper .player-name-container {
     width: 100%;
     text-align: center;
@@ -254,7 +242,6 @@ article h3.school-trigger {
     text-decoration: none;
 }
 
-/* optional responsiveness */
 @media (min-width: 900px) {
     .school-logo { width: 28px; height: 28px; }
 }
@@ -297,6 +284,7 @@ footer p {
     padding: 6px 0;
 }
 
+/* REMEMBER Change Image Stuff Here!! */
 .player-entry img {
     width: 100px;        /* change this value to make images bigger/smaller */
     height: 100px;       /* keep width/height equal for square crop */
@@ -305,7 +293,6 @@ footer p {
     flex: 0 0 100px;     /* fixed box so text doesn't shift */
 }
 
-/* optional smaller size on narrow screens */
 @media (max-width: 420px) {
     .player-entry img {
         width: 48px;
@@ -413,12 +400,10 @@ article.penn-state:hover {
 .penn-state .player-info-wrapper .player-entry:nth-child(4) img { object-position: center 40%; } /* Olaivavega Ioane */
 .penn-state .player-info-wrapper .player-entry:nth-child(5) img { object-position: center 28%; } /* Kaytron Allen */
 
-/* Do same for other schools if needed */
 .ohio-state .player-info-wrapper .player-entry:nth-child(1) img { object-position: center 32%; } /* Caleb Downs */
 .ohio-state .player-info-wrapper .player-entry:nth-child(2) img { object-position: center 28%; } /* Carnell Tate */
 .ohio-state .player-info-wrapper .player-entry:nth-child(3) img { object-position: center 30%; } /* Sonny Styles */
 
-/* --- Full-screen vault splash --- */
 .vault-splash-overlay {
     position: fixed;
     top: 0;
@@ -451,12 +436,10 @@ article.penn-state:hover {
     }
 }
 
-/* Optional: dismiss on click */
 .vault-splash-overlay.dismissed {
     animation: fadeOutSplash 0.4s ease-in-out forwards;
 }
 
-/* --- Login Modal --- */
 .login-modal-overlay {
     position: fixed;
     top: 0;
