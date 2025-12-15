@@ -158,7 +158,7 @@ article h3.school-trigger {
     justify-content: space-between; /* name left, logo/chev right */
     gap: 10px;
     padding: 12px 18px;
-    background: #0d0d0d;
+    background: #ffffff;
     color: var(--secondary-color);
     font-family: 'Graduate', Arial, sans-serif;
     cursor: pointer;
